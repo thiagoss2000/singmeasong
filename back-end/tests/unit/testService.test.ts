@@ -55,7 +55,7 @@ describe("service getRandom", () => {
         jest.spyOn(recommendationRepository, "findAll").mockImplementationOnce(({score, scoreFilter}):any => {
             expect(score).toEqual(10);
             expect(scoreFilter).toEqual('gt');
-            return ['obj']//[[2, 1]];
+            return ['obj']
         });
         const promise = recommendationService.getRandom();
         promise.then(res => expect(res).toEqual('obj'));
